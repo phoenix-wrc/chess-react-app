@@ -20,7 +20,6 @@ export class Knight extends Figure {
         const dy = Math.abs(this.cell.y - target.y);
 
         return (dx === 1 && dy === 2) || (dx === 2 && dy === 1);
-        return true;
     }
 
 }
