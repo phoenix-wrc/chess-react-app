@@ -15,6 +15,20 @@ export class King extends Figure {
         if (!super.canMove(target)) {
             return false;
         }
-        return true;
+
+        // eslint-disable-next-line no-mixed-operators
+        if (   (target.y === this.cell.y + 1 && target.x === this.cell.x)
+            || (target.y === this.cell.y + 1 && target.x === this.cell.x + 1)
+            || (target.y === this.cell.y + 1 && target.x === this.cell.x - 1)
+            || (target.y === this.cell.y - 1 && target.x === this.cell.x)
+            || (target.y === this.cell.y - 1 && target.x === this.cell.x + 1)
+            || (target.y === this.cell.y - 1 && target.x === this.cell.x - 1)
+            || (target.y === this.cell.y && target.x === this.cell.x + 1)
+            || (target.y === this.cell.y && target.x === this.cell.x - 1)
+        ) {
+            return true;
+        }
+
+        return false;
     }
 }
